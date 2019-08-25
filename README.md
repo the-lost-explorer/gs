@@ -1,5 +1,5 @@
 # gs
 
-[![CircleCI](https://circleci.com/gh/the-lost-explorer/gs/tree/master.svg?style=svg)](https://circleci.com/gh/the-lost-explorer/gs/tree/master)
+[![Build Status](https://travis-ci.org/the-lost-explorer/gs.svg?branch=master)](https://travis-ci.org/the-lost-explorer/gs)
 
 Graphics Simulator to be.
