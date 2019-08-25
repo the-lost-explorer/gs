@@ -5,7 +5,7 @@ matrix:
       python: 3.7           # this works for Linux but is ignored on macOS or Windows
       before_install:
         - sudo apt-get install python3-tk
-        - pwd
+        - python setup.py install
 
       env: 
         - PATH=/c/Python37:/c/Python37/Scripts:$PATH
