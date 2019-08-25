@@ -1,4 +1,6 @@
 language: python            # this works for Linux but is an error on macOS or Windows
+services:
+  - xvfb
 matrix:
   include:
     - name: "Python 3.7.1 on Xenial Linux"
@@ -6,10 +8,12 @@ matrix:
       before_install:
         - sudo apt-get install python3-tk
         - python setup.py install
+        - "export DISPLAY=:99.0"
+        - "sh -e /etc/init.d/xvfb start"
+        - sleep 3 # give xvfb some time to start
 
       env: 
         - PATH=/c/Python37:/c/Python37/Scripts:$PATH
-        - DISPLAY=:99.0
       
 install: 
   - pip3 install --upgrade pip
