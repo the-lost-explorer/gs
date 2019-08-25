@@ -4,7 +4,7 @@ matrix:
     - name: "Python 3.7.1 on Xenial Linux"
       python: 3.7           # this works for Linux but is ignored on macOS or Windows
       before_install:
-        - apt-get install python3-tk
+        - sudo apt-get install python3-tk
 
       env: 
         - PATH=/c/Python37:/c/Python37/Scripts:$PATH
