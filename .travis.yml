@@ -16,5 +16,4 @@ install:
   - pip3 install --upgrade pip
 
 script: 
-  - cd gs/test
-  - python gs_test.py
+  - nosetests --with-coverage --cover-package=gs
