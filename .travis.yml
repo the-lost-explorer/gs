@@ -7,7 +7,7 @@ matrix:
       python: 3.7           # this works for Linux but is ignored on macOS or Windows
       before_install:
         - sudo apt-get install python3-tk
-        - python setup.py install
+        - sudo python setup.py install
 
       env: 
         - PATH=/c/Python37:/c/Python37/Scripts:$PATH
@@ -16,4 +16,5 @@ install:
   - pip3 install --upgrade pip
 
 script: 
-  - gsctl -l 1000 -w 800 -g 10
+  - cd gs/test
+  - python gs_test.py

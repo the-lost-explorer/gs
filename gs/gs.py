@@ -1,10 +1,11 @@
 import tkinter as tk
+from tkinter import messagebox
 LARGE_FONT= ("Verdana", 12)
 
 
 class GS(tk.Tk):
 
-    def __init__(self,height = 800, width = 800, lines = 50, *args, **kwargs):
+    def __init__(self, height = 800, width = 800, lines = 50, *args, **kwargs):
         self.height = height
         self.width = width
         self.lines = lines
@@ -13,6 +14,7 @@ class GS(tk.Tk):
         container.pack(side="top", fill="both", expand = True)
         container.grid_rowconfigure(0, weight=1)
         container.grid_columnconfigure(0, weight=1)
+
 
         self.frames = {}
 
@@ -47,6 +49,7 @@ class Grid(tk.Frame):
         self.canvas.bind('<Configure>', self.create_grid)
         self.canvas.pack(fill=tk.BOTH, expand=True)
 
+
     def create_grid(self, event = None):
         w = self.canvas.winfo_width()
         h = self.canvas.winfo_height()
@@ -77,3 +80,9 @@ class Grid(tk.Frame):
             #Negative Y-axis
             self.canvas.create_line(self.width//2, i+self.height//2, self.width//2-5, i+self.height//2)        
             self.canvas.create_text(self.width//2-17, i+self.height//2, fill="black",font="Times 10", text=str(-(self.height//2 - i)))    
+
+
+
+        
+
+    
