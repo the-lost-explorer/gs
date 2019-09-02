@@ -25,15 +25,13 @@ def main():
         help='Get a grid of pixels with the given height and width as output ')
 
     parser.add_argument(
-        '-g',
-        '--grid',
-        type = int,
-        help='Specifies how often you want grid lines on the screen. \n 1 means 1 line after every pixel line and 50 means 1 line after every 50 pixel lengths. \n Default = 50') 
+        '-m',
+        '--mode',
+        type = str,
+        help='Specify the screen mode.') 
     
-
-
     args = parser.parse_args()
-    print(args)
+
     if((type(args.length) != (int)) and (type(args.width) != (int))):
         print('Enter height and width as integer numbers.')
         print('They define the number of horizontal and verticle pixels on your screen and cannot be fractional.')
@@ -46,14 +44,14 @@ def main():
         args.width = args.length
         print('Since width was not specified/non-integer value given, it will be assumed to be same as length')
         print('Canvas generated.')
-    elif(type(args.grid) != int):
-        args.grid = 50
-        print('Since grid intensity was not specified/non-integer value was given, it will be assumed as 50.')
+    elif(type(args.mode) != str):
+        args.mode = "g 50"
+        print('No mode specified. Using pixel space.')
         print('Canvas generated.')
     else:
         print('Canvas generated.')
 
-    app = gs.GS(height=int(args.length), width=int(args.width), lines = int(args.grid))
+    app = gs.GS(height=int(args.length), width=int(args.width), mode = str(args.mode))
     app.mainloop()
 
 
